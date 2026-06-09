@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>CAESAR CIPHER</h3>
+        <form method="POST" action="/caesar">
+            <div class="form-group">
+                <label>Plaintext:</label>
+                <input type="text" name="text" class="form-control" placeholder="Nhập văn bản...">
+            </div>
+            <div class="form-group">
+                <label>Key:</label>
+                <input type="number" name="key" class="form-control" placeholder="Nhập số khóa...">
+            </div>
+            <button type="submit" name="action" value="encrypt" class="btn btn-primary">Encrypt</button>
+            <button type="submit" name="action" value="decrypt" class="btn btn-success">Decrypt</button>
+        </form>
+
+        {% if result %}
+        <div class="alert alert-info mt-4">
+            <strong>Kết quả:</strong> {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
